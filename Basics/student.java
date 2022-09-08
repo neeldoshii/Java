@@ -2,17 +2,22 @@ import java.util.Scanner;
 
 public class student {
 
-        String name;
-        int roll;
+        public String name ;
+        int roll = 10;
         int marks;
         int grade;
         int percentage;
         boolean pass;
 
         }
+        class test extends student{
+            public static void main(String[] args) {
+                System.out.println(student.name);
+            }
+        }
 
         class marks extends student{
-            void getDetails(){
+            public void getDetails(){
                 Scanner scan = new Scanner(System.in);
                 System.out.println("Enter your Name :");
                 name = scan.nextLine();
@@ -28,7 +33,7 @@ public class student {
         }
 
         class gradefind extends marks{
-            void grade(){
+            public void grade(){
                 if (percentage<=100 && percentage >=90){
                     System.out.println("Your Grade is A++_ ... PS your are still Noob");
                 } else if (percentage>=90 && percentage <=70) {
@@ -47,7 +52,7 @@ public class student {
         }
 
         class data extends gradefind{
-            void showData(){
+            public void showData(){
                 System.out.println("Time to show all the data now :D ");
                 System.out.println("YOur Name is " + name + " and your roll no is " + roll + "and your percentage is " + percentage);
                 System.out.println("Data Function Ends ------------------------------------------------------------");
@@ -59,12 +64,10 @@ public class student {
             public static void main(String[] args) {
                 System.out.println("Results Declared !!!!!!!");
   
-                marks m1 = new marks();
-                m1.getDetails();
-                gradefind gf1 = new gradefind();
-                gf1.grade();
-                data d1 = new data();
-                d1.showData();
+                marks s1 = new marks();
+                s1.getDetails();
+                s1.grade();
+                s1.showData();
                 System.out.println("Result Dekh liya abh F");
 
 
